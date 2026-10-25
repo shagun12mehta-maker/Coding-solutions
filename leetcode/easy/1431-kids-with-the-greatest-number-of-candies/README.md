@@ -56,9 +56,9 @@ Output: [true,false,true]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-10-25T07:26:20.391Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 12.3 MB (beats 99.55%)  
+**Submitted:** 2026-10-25T07:33:50.219Z  
 
 ```cpp
 class Solution {
@@ -72,16 +72,15 @@ public:
                 max1=max(max1,candies[i]);
             }
         }
-
         for(int i=0;i<n;i++){
             int total=candies[i]+extraCandies;
                         if(total>=max1){
                             result.push_back(true);
-                            break;
+                          
                         }
                         else{
                             result.push_back(false);
-                            break;
+                           
                         }
         }  
     return result;
