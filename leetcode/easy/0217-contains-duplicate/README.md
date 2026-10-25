@@ -44,32 +44,27 @@ All elements are distinct.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.9 MB  
-**Submitted:** 2026-10-25T13:14:37.079Z  
+**Runtime:** 98 ms (beats 13.28%)  
+**Memory:** 113.4 MB (beats 16.18%)  
+**Submitted:** 2026-10-25T14:04:01.204Z  
 
 ```cpp
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
         int size=nums.size();
-       bool flag=false;
+      unordered_set<int> s;
+      bool flag=false;
         for(int i=0;i<size;i++){
-            int count=0;
-              flag=false;
-            for(int j=0;j<size;j++){
-                if(nums[i]==nums[j]){
-                    count+=1;
-                }
-                if(count>1){
-                    flag=true;
-                }
-                
-
+            if(s.find(nums[i])!=s.end()){
+                flag=true;
             }
-
-        }
-        return flag;
+            s.insert(nums[i]);
+            
+            }
+return flag;
+        
+        
     }
 };
 ```
