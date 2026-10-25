@@ -39,9 +39,9 @@ Output: [2]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 3 ms (beats 79.24%)  
-**Memory:** 54.8 MB (beats 44.12%)  
-**Submitted:** 2026-10-25T12:23:04.469Z  
+**Runtime:** 0 ms  
+**Memory:** 8.2 MB  
+**Submitted:** 2026-10-25T12:23:13.263Z  
 
 ```cpp
 class Solution {
