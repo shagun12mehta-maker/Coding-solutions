@@ -57,8 +57,8 @@ Output: [true,false,true]
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 12.3 MB (beats 99.55%)  
-**Submitted:** 2026-10-25T07:33:50.219Z  
+**Memory:** 12.4 MB (beats 59.96%)  
+**Submitted:** 2026-10-25T07:34:20.651Z  
 
 ```cpp
 class Solution {
