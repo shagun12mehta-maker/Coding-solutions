@@ -9,16 +9,15 @@ public:
                 max1=max(max1,candies[i]);
             }
         }
-
         for(int i=0;i<n;i++){
             int total=candies[i]+extraCandies;
                         if(total>=max1){
                             result.push_back(true);
-                            break;
+                          
                         }
                         else{
                             result.push_back(false);
-                            break;
+                           
                         }
         }  
     return result;
