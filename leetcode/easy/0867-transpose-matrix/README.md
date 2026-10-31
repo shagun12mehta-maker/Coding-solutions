@@ -40,8 +40,8 @@ Output: [[1,4],[2,5],[3,6]]
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 15 MB (beats 88.60%)  
-**Submitted:** 2026-10-31T09:03:17.790Z  
+**Memory:** 15.2 MB (beats 31.92%)  
+**Submitted:** 2026-10-31T09:16:24.721Z  
 
 ```cpp
 class Solution {
@@ -51,17 +51,17 @@ public:
         //vector<int> nmat;
         int rows=matrix.size();
         int col=matrix[0].size();
-        vector<vector<int>> transpose(col,vector<int>(rows));
+        vector<vector<int>> transspose(col,vector<int>(rows));
         for(int i=0;i<col;i++){
             for(int j=0;j<rows;j++){
                 
-                    transpose[i][j]=matrix[j][i]; 
+                    transspose[i][j]=matrix[j][i]; 
                 }
                 
             }
         
 
-return transpose;
+return transspose;
     }
 };
 ```
