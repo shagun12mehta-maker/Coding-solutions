@@ -5,16 +5,16 @@ public:
         //vector<int> nmat;
         int rows=matrix.size();
         int col=matrix[0].size();
-        vector<vector<int>> transpose(col,vector<int>(rows));
+        vector<vector<int>> transspose(col,vector<int>(rows));
         for(int i=0;i<col;i++){
             for(int j=0;j<rows;j++){
                 
-                    transpose[i][j]=matrix[j][i]; 
+                    transspose[i][j]=matrix[j][i]; 
                 }
                 
             }
         
 
-return transpose;
+return transspose;
     }
 };
