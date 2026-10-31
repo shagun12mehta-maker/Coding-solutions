@@ -46,9 +46,9 @@ Output: []
 ## Solution
 
 **Language:** C++  
-**Runtime:** 69 ms (beats 8.43%)  
-**Memory:** 67 MB (beats 30.20%)  
-**Submitted:** 2026-10-31T10:00:49.351Z  
+**Runtime:** 66 ms (beats 10.88%)  
+**Memory:** 67.1 MB (beats 16.31%)  
+**Submitted:** 2026-10-31T10:02:07.657Z  
 
 ```cpp
 #include<unordered_map>
