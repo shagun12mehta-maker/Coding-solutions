@@ -46,9 +46,9 @@ Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.3 MB  
-**Submitted:** 2026-11-01T10:41:46.418Z  
+**Runtime:** 28 ms (beats 8.51%)  
+**Memory:** 21.5 MB (beats 10.95%)  
+**Submitted:** 2026-11-01T10:41:59.689Z  
 
 ```cpp
 class Solution {
