@@ -11,12 +11,14 @@ public:
                 if(matrix[m][n]==0){
                      int x=m;
                      int y=n;
-                    for(int i=0;i<row;i++){
+                   // for(int i=0;i<row;i++){
                         for(int j=0;j<col;j++){
-                            zeromatrix[x][j]=0;
+
+                            zeromatrix[x][j]=0;}
+                           for(int i=0;i<row;i++){ 
                             zeromatrix[i][y]=0;
                         }  
-                    }
+                    
                      // for(int i=0;i<row;i++){
                        // for(j=y;j<=y;j++){
                          //   zeromatrix[i][j]=0;
