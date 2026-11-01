@@ -46,44 +46,34 @@ Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 28 ms (beats 8.51%)  
-**Memory:** 21.5 MB (beats 10.95%)  
-**Submitted:** 2026-11-01T10:41:59.689Z  
+**Runtime:** 0 ms  
+**Memory:** 8.3 MB  
+**Submitted:** 2026-11-01T11:18:59.949Z  
 
 ```cpp
 class Solution {
 public:
-    void setZeroes(vector<vector<int>>& matrix) {
-        vector<vector<int>> zeromatrix;
-        zeromatrix=matrix;
-        int row=matrix.size();
-        int col=matrix[0].size();
-        for(int m=0;m<row;m++){
-            for(int n=0;n<col;n++){
-                
-                if(matrix[m][n]==0){
-                     int x=m;
-                     int y=n;
-                   // for(int i=0;i<row;i++){
-                        for(int j=0;j<col;j++){
-
-                            zeromatrix[x][j]=0;}
-                           for(int i=0;i<row;i++){ 
-                            zeromatrix[i][y]=0;
-                        }  
-                    
-                     // for(int i=0;i<row;i++){
-                       // for(j=y;j<=y;j++){
-                         //   zeromatrix[i][j]=0;
-                      //  }  
-                    //}
-
+    void setZeroes(vector<vector<int>>& matrix)
+    {
+         int rows=matrix.size();
+        int cols=matrix[0].size();
+        vector<int> row(rows,0);
+        vector<int>col(cols,0);
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<cols;j++){  
+                if(matrix[i][j]==0){
+                    row[i]=1;
+                    col[j]=1;
                 }
+    }   
+    }
+    for(int i=0;i<rows;i++){
+            for(int j=0;j<cols;j++){
+                 if(row[i]==1 || col[j]==1){
+                    matrix[i][j]=0;
+    }
             }
-        }
-        matrix=zeromatrix;
-        
-        
+    }
     }
 };
 ```
