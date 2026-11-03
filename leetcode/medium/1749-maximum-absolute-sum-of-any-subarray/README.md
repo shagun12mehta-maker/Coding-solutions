@@ -43,9 +43,9 @@ Explanation: The subarray [-5,1,-4] has absolute sum = abs(-5+1-4) = abs(-8) = 8
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.1 MB  
-**Submitted:** 2026-11-03T16:35:55.494Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 45.1 MB (beats 87.30%)  
+**Submitted:** 2026-11-03T16:58:55.513Z  
 
 ```cpp
 class Solution {
@@ -53,15 +53,31 @@ public:
     int maxAbsoluteSum(vector<int>& nums) {
         int size=nums.size();
         int max_sum=INT_MIN;
+        int min_sum=INT_MAX;
         int cs=0;
+        int cs1=0;
+        int ans;
         for(int i=0;i<size;i++){
             cs+=nums[i];
-           // if(cs<0){
-             //   cs=abs(cs);
-            //}
-            max_sum=max(max_sum,abs(cs));
+            cs1+=nums[i];
+            max_sum=max(max_sum,cs);
+            if(cs<0){
+                cs=0;
+            }
+            min_sum=min(min_sum,cs1);
+            if(cs1>0){
+                cs1=0;
+            }
         }
-        return max_sum;
+        if(abs(min_sum)>abs(max_sum)){
+            ans=abs(min_sum);
+        }
+else{
+    ans=abs(max_sum);
+}
+        
+
+        return ans;
     }
 };
 ```
