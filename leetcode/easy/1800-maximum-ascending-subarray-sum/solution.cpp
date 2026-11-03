@@ -12,11 +12,11 @@ public:
              max_sum=max(cs,max_sum);
              cs+=nums[i];
              
-            if(nums[i]<nums[i-1] ){
+            if(nums[i]<=nums[i-1] ){
                 cs=nums[i];
                 }
           
-           max_sum=max(cs,max_sum);
+          max_sum=max(cs,max_sum);
            
             }}
  return max_sum;
