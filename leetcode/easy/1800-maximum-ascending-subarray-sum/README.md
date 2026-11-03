@@ -49,7 +49,7 @@ Explanation: [10,11,12] is the ascending subarray with the maximum sum of 33.
 **Language:** C++  
 **Runtime:** 0 ms  
 **Memory:** 8.1 MB  
-**Submitted:** 2026-11-03T14:21:51.366Z  
+**Submitted:** 2026-11-03T14:22:39.666Z  
 
 ```cpp
 class Solution {
@@ -58,17 +58,21 @@ public:
         int size=nums.size();
        int max_sum=INT_MIN;
        int cs=nums[0];
+       if(size==1){
+        max_sum=max(cs,max_sum);
+       }
+       else{
         for(int i=1;i<size;i++){
              max_sum=max(cs,max_sum);
              cs+=nums[i];
              
-            if(nums[i]<nums[i-1] && size>1){
+            if(nums[i]<nums[i-1] ){
                 cs=nums[i];
                 }
           
            max_sum=max(cs,max_sum);
            
-            }
+            }}
  return max_sum;
         
     }
