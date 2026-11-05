@@ -50,32 +50,23 @@ Explanation: There is no x where 3x = (-1).
 ## Solution
 
 **Language:** C++  
-**Runtime:** 13 ms (beats 17.53%)  
-**Memory:** 8.6 MB (beats 97.67%)  
-**Submitted:** 2026-11-05T05:26:12.791Z  
+**Runtime:** 9 ms (beats 32.88%)  
+**Memory:** 8.8 MB (beats 89.22%)  
+**Submitted:** 2026-11-05T05:58:26.041Z  
 
 ```cpp
 class Solution {
 public:
     bool isPowerOfThree(int n) {
-        bool flag=true;
         if(n<=0){
-            flag=false;
-        }
-    while(n>0){
-        int digit=n%3;
-        if(digit!=0 && n!=1){
-            flag=false;
-            break;
-        }
-        else{
-            n=n/3;
-        }
-    }
-    return flag;
-    }
-};
+            return false;
+            }
+           return 1162261467%n==0;
 
+        }
+    
+    
+};
 ```
 
 ---
