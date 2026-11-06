@@ -9,11 +9,13 @@ public:
             ans=1;
         }
         else{
-        for(int i =x-1;i>0;i--){
+        long long i=x-1;
+        while(i<x){
             if(i*i<=x){
                 ans=i;
                 break;
             }
+            i--;
         }}
        return ans; 
     }
