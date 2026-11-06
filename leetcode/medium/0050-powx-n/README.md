@@ -47,8 +47,8 @@ Explanation: 2-2 = 1/22 = 1/4 = 0.25
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 7.8 MB  
-**Submitted:** 2026-11-06T08:23:20.307Z  
+**Memory:** 7.9 MB  
+**Submitted:** 2026-11-06T08:23:33.851Z  
 
 ```cpp
 class Solution {
@@ -70,7 +70,7 @@ public:
             
         
         double ans=1;
-       long long binaryform=n;
+        long binaryform=n;
         if(n<0){
             x=1.0/x;
             binaryform=-binaryform;
