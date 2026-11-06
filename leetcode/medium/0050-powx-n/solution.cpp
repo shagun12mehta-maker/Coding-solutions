@@ -17,7 +17,7 @@ public:
             
         
         double ans=1;
-       long long binaryform=n;
+        long binaryform=n;
         if(n<0){
             x=1.0/x;
             binaryform=-binaryform;
