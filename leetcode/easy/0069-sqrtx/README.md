@@ -40,8 +40,8 @@ Explanation: The square root of 8 is 2.82842..., and since we round it down to t
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 7.7 MB  
-**Submitted:** 2026-11-06T08:47:24.135Z  
+**Memory:** 8 MB  
+**Submitted:** 2026-11-06T09:10:49.460Z  
 
 ```cpp
 class Solution {
@@ -55,11 +55,13 @@ public:
             ans=1;
         }
         else{
-        for(int i =x-1;i>0;i--){
+        long long i=x-1;
+        while(i<x){
             if(i*i<=x){
                 ans=i;
                 break;
             }
+            i--;
         }}
        return ans; 
     }
