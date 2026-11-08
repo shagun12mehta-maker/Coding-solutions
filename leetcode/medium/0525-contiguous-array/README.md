@@ -46,8 +46,8 @@ Explanation: [1,1,1,0,0,0] is the longest contiguous subarray with equal number 
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-11-08T15:01:38.070Z  
+**Memory:** 8.3 MB  
+**Submitted:** 2026-11-08T15:02:14.110Z  
 
 ```cpp
 #include<unordered_map>
@@ -60,10 +60,10 @@ public:
         freq[nums[i]]++;
       } 
       if(freq[0]>freq[1]){
-        return freq[1];
+        return freq[1]*2;
       }
       else{
-        return freq[0];
+        return freq[0]*2;
       }
     }
 };
