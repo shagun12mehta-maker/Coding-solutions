@@ -8,10 +8,10 @@ public:
         freq[nums[i]]++;
       } 
       if(freq[0]>freq[1]){
-        return freq[1];
+        return freq[1]*2;
       }
       else{
-        return freq[0];
+        return freq[0]*2;
       }
     }
 };
