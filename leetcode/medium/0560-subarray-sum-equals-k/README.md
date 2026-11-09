@@ -37,33 +37,33 @@ Output: 2
 ## Solution
 
 **Language:** C++  
-**Runtime:** 43 ms (beats 59.00%)  
-**Memory:** 45.5 MB (beats 51.16%)  
-**Submitted:** 2026-11-08T14:41:03.370Z  
+**Runtime:** 40 ms (beats 71.59%)  
+**Memory:** 45.3 MB (beats 76.77%)  
+**Submitted:** 2026-11-09T10:04:17.132Z  
 
 ```cpp
 #include<unordered_map>
 class Solution {
 public:
-
-    int subarraySum(vector<int>& nums, int k){
+    int subarraySum(vector<int>& nums, int k) {
+        unordered_map<int,int> mp;
+        int cs=0;
+        mp[0]=1;
         int n=nums.size();
-        unordered_map <int,int>freq;
-         int cs=0;
-int count=0;
-freq[0]=1;
-       
-       for(int i=0;i<n;i++){
-        cs+=nums[i];
-        if(freq.find(cs-k)!=freq.end()){
-           count+= freq[cs-k];
+        int count=0;
+
+        for
+        (int i=0;i<n;i++){
+            cs+=nums[i];
+            if(mp.find(cs-k)!=mp.end()){
+                count+=mp[cs-k];
+            }
+            mp[cs]++;
+
         }
+        return count;
+
         
-            freq[cs]++;
-        
-        
-       }
-       return count;
     }
 };
 ```
