@@ -10,11 +10,11 @@ public:
          unordered_map<int,int> freq;
         for(int j=i;j<size;j++){
                 freq[nums[j]]++;
-            }
+            
  if(freq[0]==freq[1]){
                      maxlength=max(maxlength,freq[0]*2);
                      }
-                }     
+                }  }   
         return maxlength; 
     }
     
