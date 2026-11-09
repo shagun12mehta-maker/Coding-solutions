@@ -45,9 +45,9 @@ Explanation: [1,1,1,0,0,0] is the longest contiguous subarray with equal number 
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-11-09T07:01:57.952Z  
+**Runtime:** 25 ms (beats 56.19%)  
+**Memory:** 88 MB (beats 94.60%)  
+**Submitted:** 2026-11-09T08:34:39.761Z  
 
 ```cpp
 #include<unordered_map>
@@ -55,18 +55,26 @@ class Solution {
 public:
     int findMaxLength(vector<int>& nums) {
       int size=nums.size();
-    //    unordered_map<int,int> freq;
-  int  totalsum=0;
+        unordered_map<int,int> freq;
+  int  sum=0;
   int  maxlength=0;
+  freq[0]=-1;
     for(int i=0;i<size;i++){
-         unordered_map<int,int> freq;
-        for(int j=i;j<size;j++){
-                freq[nums[j]]++;
-            
- if(freq[0]==freq[1]){
-                     maxlength=max(maxlength,freq[0]*2);
-                     }
-                }  }   
+        if(nums[i] == 0) {
+    nums[i] = -1;
+}
+else {
+    nums[i] = 1;
+}
+sum+=nums[i];
+
+ if(freq.find(sum)!=freq.end()){
+     maxlength=max(maxlength,i-freq[sum]);
+ }
+    else{
+        freq[sum]=i;
+    }
+     }                 
         return maxlength; 
     }
     
