@@ -38,9 +38,9 @@ Output: ["h","a","n","n","a","H"]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.1 MB  
-**Submitted:** 2026-11-21T15:51:55.659Z  
+**Runtime:** 2 ms (beats 7.02%)  
+**Memory:** 27.4 MB (beats 12.77%)  
+**Submitted:** 2026-11-21T15:53:11.806Z  
 
 ```cpp
 class Solution {
@@ -48,10 +48,10 @@ public:
     void reverseString(vector<char>& s) {
         vector<char> ans;
         int n=s.size();
-        for(int i=n-1;i>0;i--){
+        for(int i=n-1;i>=0;i--){
             ans.push_back(s[i]);
         }
-        
+     s=ans;   
     }
 };
 ```
