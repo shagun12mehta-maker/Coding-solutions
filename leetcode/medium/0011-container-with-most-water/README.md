@@ -45,8 +45,8 @@ Output: 1
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 8 MB  
-**Submitted:** 2026-11-23T17:48:26.761Z  
+**Memory:** 8.2 MB  
+**Submitted:** 2026-11-23T17:57:33.664Z  
 
 ```cpp
 class Solution {
@@ -56,6 +56,7 @@ public:
         int l=0;
         int r=n-1;
         int maxans=0;
+        int w;
         while(l<r){
             int w=r-l;
             int h=min(height[l],height[r]);
