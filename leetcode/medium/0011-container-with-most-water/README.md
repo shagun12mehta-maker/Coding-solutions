@@ -44,9 +44,9 @@ Output: 1
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-11-23T17:57:33.664Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 62.9 MB (beats 27.51%)  
+**Submitted:** 2026-11-23T18:02:57.401Z  
 
 ```cpp
 class Solution {
@@ -56,19 +56,14 @@ public:
         int l=0;
         int r=n-1;
         int maxans=0;
-        int w;
         while(l<r){
             int w=r-l;
             int h=min(height[l],height[r]);
            int area=w*h;
             maxans=max(maxans,area);
-            if(l<r){
-                l++;
+            (height[l]<height[r])?l++:r--;
             }
-            else if(r<l){
-                r--;
-            }
-        }
+        
       return maxans;  
     }
 };
