@@ -5,6 +5,7 @@ public:
         int l=0;
         int r=n-1;
         int maxans=0;
+        int w;
         while(l<r){
             int w=r-l;
             int h=min(height[l],height[r]);
