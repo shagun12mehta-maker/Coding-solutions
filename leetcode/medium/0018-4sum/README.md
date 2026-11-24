@@ -45,7 +45,7 @@ Output: [[2,2,2,2]]
 **Language:** C++  
 **Runtime:** 0 ms  
 **Memory:** 8.4 MB  
-**Submitted:** 2026-11-24T07:35:19.834Z  
+**Submitted:** 2026-11-24T07:35:36.453Z  
 
 ```cpp
 class Solution {
@@ -54,7 +54,7 @@ public:
         sort(nums.begin(),nums.end());
         vector<vector<int>> ans;
         int n=nums.size();
-        int sum;
+        long long sum;
         for(int i=0;i<n-3;i++){
             if(i>0 && nums[i]==nums[i-1]){
                 continue;
@@ -73,7 +73,7 @@ public:
                           if(l>k+1 && nums[l]==nums[l-1]){
                             continue;
             }
-               int sum=nums[i]+nums[j]+nums[k]+nums[l];
+            long long sum=nums[i]+nums[j]+nums[k]+nums[l];
                if(sum==target){
                 ans.push_back({nums[i],nums[j],nums[k],nums[l]});
                }
