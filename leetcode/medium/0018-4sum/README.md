@@ -43,9 +43,9 @@ Output: [[2,2,2,2]]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-11-24T07:35:36.453Z  
+**Runtime:** 33 ms (beats 10.03%)  
+**Memory:** 17.2 MB (beats 88.41%)  
+**Submitted:** 2026-11-24T07:45:23.678Z  
 
 ```cpp
 class Solution {
@@ -56,6 +56,7 @@ public:
         int n=nums.size();
         long long sum;
         for(int i=0;i<n-3;i++){
+
             if(i>0 && nums[i]==nums[i-1]){
                 continue;
             }
@@ -63,26 +64,33 @@ public:
                   if(j>i+1 && nums[j]==nums[j-1]){
                     continue;
             }
-            
-                for(int k=j+1;k<n-1;k++){
-                      if(k>j+1 && nums[k]==nums[k-1]){
-                        continue;
+             int l=j+1;
+            int r=n-1;
+            while(l<r){
+                sum=(long long)nums[i]+nums[j]+nums[l]+nums[r];
+                 if(l>j+1 && nums[l]==nums[l-1]){
+                      l++;
+                    continue;
+                  
             }
-            
-                    for(int l=k+1;l<n;l++){
-                          if(l>k+1 && nums[l]==nums[l-1]){
-                            continue;
+            if(r<n-1 && nums[r]==nums[r+1]){
+                r--;
+                    continue;
+                    
+
             }
-            long long sum=nums[i]+nums[j]+nums[k]+nums[l];
-               if(sum==target){
-                ans.push_back({nums[i],nums[j],nums[k],nums[l]});
-               }
+            if(sum==target){
+                ans.push_back({nums[i],nums[j],nums[l],nums[r]});
+                l++;
+                r--;
             }
-        }
+            else{
+                sum>target?r--:l++;
             }
-        }
-        return ans;
     }
+            }
+        }
+        return ans;}
     
 };
 ```
