@@ -54,9 +54,9 @@ Explanation: The only possible triplet sums up to 0.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.1 MB  
-**Submitted:** 2026-11-24T05:52:23.925Z  
+**Runtime:** 66 ms (beats 14.74%)  
+**Memory:** 29.2 MB (beats 40.67%)  
+**Submitted:** 2026-11-24T06:03:55.091Z  
 
 ```cpp
 class Solution {
@@ -77,7 +77,7 @@ public:
                     l++;
                             continue;
                         }
-                        if(r>l+1 && nums[r]==nums[r-1]){
+                        if(r>n-1 && nums[r]==nums[r+1]){
                             r--;
                             continue;
                         }
@@ -87,9 +87,10 @@ public:
                         l++;
                         r--;
                         }
+                        else{
                         
                          sum>0?r--:l++;
-                 }
+                 }}
                         }
        return zeroarray; 
     }
