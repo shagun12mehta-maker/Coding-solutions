@@ -16,7 +16,7 @@ public:
                     l++;
                             continue;
                         }
-                        if(r>l+1 && nums[r]==nums[r-1]){
+                        if(r>n-1 && nums[r]==nums[r+1]){
                             r--;
                             continue;
                         }
@@ -26,9 +26,10 @@ public:
                         l++;
                         r--;
                         }
+                        else{
                         
                          sum>0?r--:l++;
-                 }
+                 }}
                         }
        return zeroarray; 
     }
