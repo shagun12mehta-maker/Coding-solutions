@@ -16,7 +16,7 @@ public:
                     l++;
                             continue;
                         }
-                        if(r>n-1 && nums[r]==nums[r+1]){
+                        if(r<n-1 && nums[r]==nums[r+1]){
                             r--;
                             continue;
                         }
