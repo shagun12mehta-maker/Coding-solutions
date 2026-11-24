@@ -4,19 +4,27 @@ public:
         int n=nums.size();
         int closest=nums[0]+nums[1]+nums[2];
         int sum=0;
+       
+
         sort(nums.begin(),nums.end());
         for(int i=0;i<n-2;i++){
-             for(int j=i+1;j<n-1;j++){
-                  for(int k=j+1;k<n;k++){
-                   sum=nums[i]+nums[j]+nums[k];
-                      if(abs(sum - target) < abs(closest - target)) {
-    closest = sum;
-    }
-
-        }
-             }
-        }
-    
+              int l=i+1;
+              int r=n-1;
+              while(l<r){
+                sum=nums[i]+nums[l]+nums[r];
+                  if(abs(sum - target) < abs(closest - target)) {
+                  closest = sum;
+                  }
+         if(sum>target){
+            r--;
+         }   
+         else if(sum<target){
+            l++;
+         }
+         else{
+            return sum;
+         }
+    }}
 
      return closest;
      }
