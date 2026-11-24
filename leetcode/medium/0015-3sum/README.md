@@ -15,7 +15,8 @@ C++
  **Example 1:** 
 
 ```
-Input:vector<int> nums = {-1, 0, 1, 2, -1, -4};Output: [[-1,-1,2],[-1,0,1]]
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
 Explanation: 
 nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
 nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
@@ -28,7 +29,8 @@ Notice that the order of the output and the order of the triplets does not matte
  **Example 2:** 
 
 ```
-Input:vector<int> nums = {0, 1, 1};Output: []
+Input: nums = [0,1,1]
+Output: []
 Explanation: The only possible triplet does not sum up to 0.
 
 ```
@@ -36,7 +38,8 @@ Explanation: The only possible triplet does not sum up to 0.
  **Example 3:** 
 
 ```
-Input:vector<int> nums = {0, 0, 0};Output: [[0,0,0]]
+Input: nums = [0,0,0]
+Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
 
 ```
@@ -52,31 +55,42 @@ Explanation: The only possible triplet sums up to 0.
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-11-24T04:55:39.577Z  
+**Memory:** 8.1 MB  
+**Submitted:** 2026-11-24T05:52:23.925Z  
 
 ```cpp
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
+         vector<vector<int>> zeroarray;
         sort(nums.begin(),nums.end());
-        vector<vector<int>> zeroarray;
-        int n=nums.size();
-        int sum=0;
-        for(int i=0;i<n-2;i++){
-            for(int j=i+1;j<n-1;j++){
-                 for(int k=j+1;k<n;k++){
-                    
-                    if(i>0 && nums[i]==nums[i-1]){
+    int n=nums.size();
+     for(int i=0;i<n-2;i++){
+             int l=i+1;
+            int r=n-1;
+             if(i>0 && nums[i]==nums[i-1]){
                             continue;
                         }
-                        sum=nums[i]+nums[j]+nums[k];
+                       
+                        while(l<r){
+                 if(l>i+1&& nums[l]==nums[l-1] ){
+                    l++;
+                            continue;
+                        }
+                        if(r>l+1 && nums[r]==nums[r-1]){
+                            r--;
+                            continue;
+                        }
+                       int sum=nums[i]+nums[l]+nums[r];
                     if(sum==0){
-                        zeroarray.push_back({nums[i],nums[j],nums[k]});}
+                        zeroarray.push_back({nums[i],nums[l],nums[r]});
+                        l++;
+                        r--;
+                        }
                         
-                    }
+                         sum>0?r--:l++;
                  }
-            }   
+                        }
        return zeroarray; 
     }
 };
