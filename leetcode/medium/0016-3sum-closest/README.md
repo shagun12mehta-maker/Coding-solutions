@@ -45,9 +45,9 @@ Explanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).
 ## Solution
 
 **Language:** C++  
-**Runtime:** 881 ms (beats 5.00%)  
-**Memory:** 13.6 MB (beats 99.92%)  
-**Submitted:** 2026-11-24T03:04:08.600Z  
+**Runtime:** 7 ms (beats 91.89%)  
+**Memory:** 13.9 MB (beats 70.47%)  
+**Submitted:** 2026-11-24T03:29:04.310Z  
 
 ```cpp
 class Solution {
@@ -56,19 +56,27 @@ public:
         int n=nums.size();
         int closest=nums[0]+nums[1]+nums[2];
         int sum=0;
+       
+
         sort(nums.begin(),nums.end());
         for(int i=0;i<n-2;i++){
-             for(int j=i+1;j<n-1;j++){
-                  for(int k=j+1;k<n;k++){
-                   sum=nums[i]+nums[j]+nums[k];
-                      if(abs(sum - target) < abs(closest - target)) {
-    closest = sum;
-    }
-
-        }
-             }
-        }
-    
+              int l=i+1;
+              int r=n-1;
+              while(l<r){
+                sum=nums[i]+nums[l]+nums[r];
+                  if(abs(sum - target) < abs(closest - target)) {
+                  closest = sum;
+                  }
+         if(sum>target){
+            r--;
+         }   
+         else if(sum<target){
+            l++;
+         }
+         else{
+            return sum;
+         }
+    }}
 
      return closest;
      }
