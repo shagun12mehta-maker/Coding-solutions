@@ -12,6 +12,8 @@ You must solve this problem without using the library's sort function.
 
  
 
+Original
+C++
  **Example 1:** 
 
  **Input:**  nums = [2,0,2,1,1,0]
@@ -47,39 +49,37 @@ The array has one each of 0, 1, and 2, arranged in-place in the order 0, 1, 2.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 2 ms (beats 2.32%)  
-**Memory:** 11.7 MB (beats 50.14%)  
-**Submitted:** 2026-10-21T20:35:32.068Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 11.6 MB (beats 44.04%)  
+**Submitted:** 2026-11-26T05:34:36.555Z  
 
 ```cpp
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
-      int mid=0;
-      int low=0;
-      int high=nums.size()-1;
-      while(mid<=high){
-        if(nums[mid]==0){
-            swap(nums[mid],nums[low]);
-            mid++;
-            low++;
+        int n=nums.size();
+        int low=0;
+        int mid=0;
+        int high=n-1;
+        while(mid<=high){
+            if(nums[mid]==0){
+                swap(nums[low],nums[mid]);
+                low++;
+                mid++;
+            }
+            else if(nums[mid]==1){
+                mid++;
+             }
+             
+else{
+    swap(nums[mid],nums[high]);
+    high--;
+
+}
         }
-        else if(nums[mid]==1){
-            mid++;
-
-
-        }
-        else{
-             swap(nums[mid],nums[high]);
-             high--;
-
-        }
-      }
-      for(int i=0;i<nums.size();i++){
-        cout<<nums[i];
-
-      }
-    } 
+        
+    }
+  
 };
 ```
 
